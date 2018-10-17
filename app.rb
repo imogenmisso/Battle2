@@ -23,7 +23,8 @@ enable :sessions
   end
 
   post '/attack_response' do
-    $player1.attack($player2)
+    @game = Game.new($player1, $player2)
+    @game.attack($player2)
     redirect to('/play2')
   end
 

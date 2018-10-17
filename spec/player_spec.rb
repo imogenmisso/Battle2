@@ -13,12 +13,4 @@ describe Player do
     expect(irina.score).to eq 60
   end
 
-  it 'reduces score by 10 when attacking' do
-    expect(irina).to receive(:receive_damage)
-    imogen.attack(irina)
-  end
-
-  it 'reduces the players points' do
-    expect {irina.receive_damage}.to change {irina.score}.by(-10)
-  end 
 end
