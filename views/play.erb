@@ -1,6 +1,6 @@
 
 <%= @player_1 %> vs <%= @player_2 %>
-<div>  Player 2: 45/60HP </div>
+<div>  <%= @player_2 %>: <%= @score %> </div>
 <form action='/attack_response' method="post">
   <button>Attack</button>
 </form>

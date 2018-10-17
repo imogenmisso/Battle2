@@ -18,16 +18,19 @@ enable :sessions
   get '/play' do
     @player_1 = $player1.name
     @player_2 = $player2.name
+    @score = $player2.score
     erb :play
   end
 
   post '/attack_response' do
+    $player1.attack($player2)
     redirect to('/play2')
   end
 
   get '/play2' do
     @player_1 = $player1.name
     @player_2 = $player2.name
+    @score = $player2.score
     erb :play2
   end
 
