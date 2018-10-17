@@ -20,5 +20,16 @@ enable :sessions
     erb :play
   end
 
+  post '/attack_response' do
+    redirect to('/play2')
+  end
+
+  get '/play2' do
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    erb :play2
+  end
+
+
   run! if app_file == $0
 end
