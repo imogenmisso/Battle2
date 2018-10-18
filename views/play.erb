@@ -1,6 +1,8 @@
 
-<%= @player1 %> vs <%= @player2 %>
-<div>  <%= @player2 %>: <%= @score %> </div>
+<h1><%= @player1 %> vs <%= @player2 %></h1>
+<h3><div><%= $game.current_player.name %> it's your turn!</div></h3>
+<div>  <%= @player1 %>: <%= $game.player1.score %> </div>
+<div>  <%= @player2 %>: <%= $game.player2.score %> </div>
 <form action='/attack_response' method="post">
   <button>Attack</button>
 </form>
