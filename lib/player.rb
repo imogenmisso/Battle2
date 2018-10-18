@@ -1,14 +1,14 @@
 class Player
 
-  attr_accessor :score
+  attr_reader :score, :name
 
   def initialize(name)
     @name = name
     @score = 60
   end
 
-  def name
-    @name
+  def receive_damage
+    @score -= 10
   end
 
 end

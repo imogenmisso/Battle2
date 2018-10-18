@@ -6,7 +6,7 @@ class Game
   end
 
   def attack(player)
-    player.score -= 10
+    player.receive_damage
   end
 
 end

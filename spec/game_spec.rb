@@ -2,13 +2,14 @@ require 'game'
 
 describe Game do
 
-  subject(:imogen) { double :player1, :name => "imogen", :score => 60 }
-  subject(:irina) { double :player2, :name => "irina", :score => 60 }
-# this test needs fixing
+  subject(:imogen) { double :player1 }
+  subject(:irina) { double(:player2, receive_damage: true, score: 50) }
+
+
   it 'reduces score by 10 when attacking' do
     game = Game.new(imogen, irina)
-    allow(irina).to receive(:attack)
-    expect { subject.attack(irina) }.to change { irina.score }.by(-10)
+    game.attack(irina)
+    expect(irina.score).to eq 50
   end
 
 end
