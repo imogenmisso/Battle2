@@ -26,8 +26,12 @@ enable :sessions
   end
 
   post '/attack_response' do
-    $game.attack
-    redirect to('/play2')
+    if $game.player1.score == 10
+      redirect to('/died')
+    else
+      $game.attack
+      redirect to('/play2')
+    end
   end
 
   get '/play2' do
@@ -35,6 +39,12 @@ enable :sessions
     @player2 = $game.player2.name
     @score = $game.player2.score
     erb :play2
+  end
+
+
+
+  get '/died' do
+    erb(:died)
   end
 
 
